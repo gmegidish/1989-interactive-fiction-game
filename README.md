@@ -10,6 +10,8 @@ Your life is just perfect!
 
 .. or is it?
 
+[Play Online](https://archive.org/details/1989_20210902)
+
 ##### Technical
 
 - The game was written in two evenings. One for writing the texts, and the other for writing the code.
