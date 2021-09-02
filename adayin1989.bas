@@ -128,7 +128,8 @@
 
 5000 REM PANIC MODE STARTS HERE
 5010 VTAB 4: INVERSE : PRINT "I'M IN HELL                                                                     "; : NORMAL : VTAB 23
-5015 PRINT "" : PRINT "" : INVERSE : PRINT "I WANT OUT!";: NORMAL : PRINT " What should I do now?" : PRINT "" : INPUT "> ";S$
+5011 PRINT "" : PRINT "" : INVERSE : PRINT "I WANT OUT!";: NORMAL : PRINT " What should I do now?" : PRINT "" : INPUT "> ";S$
+5012 IF S$ = "" THEN GOTO 5000
 5016 IF MID$(S$, 1, 8) = "LOOK AT " THEN S$ = "LOOK " + MID$(S$, 9)
 5017 IF MID$(S$, 1, 2) = "X " THEN S$ = "LOOK " + MID$(S$, 3)
 
