@@ -1,3 +1,5 @@
+![screenshot](screenshot.png)
+
 ### A Day in 1989
 
 A single-room interactive fiction for the Apple II, written for the one-room-applesoft-basic practice on [Apple II Software Enthusiasts](https://www.facebook.com/groups/418327412201896) group on facebook.
