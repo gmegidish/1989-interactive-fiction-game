@@ -1,14 +1,16 @@
-5 LET SLEEP = 0 : LET HASKEY = 0 : LET FOUNDKEY = 0 : LET TRAYOPEN = 0
+1 LET SLEEP = 0 : LET HASKEY = 0 : LET FOUNDKEY = 0 : LET TRAYOPEN = 0
 
 10 HOME : PR#3
 20 FOR I=1 TO 24 : PRINT "" : NEXT I : PRINT "AN AFTERNOON IN 1989" : PRINT "Release 20210901 / Serial Num 19d6689c" : PRINT "An adventure game by Gil Megidish" : PRINT ""
 30 S$ = "LOOK" : GOTO 1006
 
 1000 VTAB 3: INVERSE : PRINT "MY ROOM                                                                         "; : NORMAL : VTAB 23
-1005 PRINT "" : PRINT "" : PRINT "What should I do now?" : INPUT "> ";S$
+1001 PRINT "" : PRINT "" : PRINT "What should I do now?" : INPUT "> ";S$
+1005 IF S$ = "" THEN GOTO 1000
 1006 IF MID$(S$, 1, 8) = "LOOK AT " THEN S$ = "LOOK " + MID$(S$, 9)
 1007 IF MID$(S$, 1, 2) = "X " THEN S$ = "LOOK " + MID$(S$, 3)
 1008 IF MID$(S$, 1, 7) = "UNLOCK " THEN S$ = "OPEN " + MID$(S$, 8)
+1009 IF MID$(S$, 1, 4) = "GET " THEN S$ = "TAKE " + MID$(S$, 5)
 1010 IF S$ = "LOOK" OR S$ = "LOOK ROOM" OR S$ = "LOOK AROUND" THEN PRINT "This is my bedroom. It has everything a kid like me needs -- I have my bed," : PRINT "my zines, my music, and of course, my Apple computer with a whopping 48KB RAM."
 1011 IF S$ = "LOOK" OR S$ = "LOOK ROOM" OR S$ = "LOOK AROUND" THEN PRINT "The bedroom door is shut, but I can tell mom's cooking downstairs. This means I" : PRINT "have a couple of hours for playing games before she calls me for dinner." : GOTO 1000
 1020 IF S$ = "N" OR S$ = "S" OR S$ = "E" OR S$ = "W" THEN PRINT "I can't go that way" : GOTO 1000
@@ -54,6 +56,7 @@
 1360 IF S$ = "LOOK WALLS" THEN PRINT "My room is simple, just four walls covered with some posters. One corner has my bed, and the other has my computer. The door to the hallway is closed." : GOTO 1000
 1370 IF S$ = "LOOK POSTERS" THEN PRINT "I have several of them. They are mostly of Paula Abdul and of Janet Jackson," : PRINT "my favorite MTV music." : GOTO 1000
 1380 IF S$ = "LOOK BED" THEN PRINT "The bed is pushed all the way in at one corner of the room. The sheets are of" : PRINT "single orange color. A pillow rests on one end of the bed." : GOTO 1000
+1990 IF S$ = "RESTART" THEN GOTO 1
 2000 PRINT "I don't know how to "; S$ : GOTO 1000
 
 3000 PRINT "" : PRINT "I take out a floppy with VVVVVV handwritten on its sticker. It's marked"
@@ -147,6 +150,7 @@
 5160 IF S$ = "N" OR S$ = "S" OR S$ = "E" OR S$ = "W" THEN PRINT "I can't go that way and I'm frustated!" : GOTO 5000
 5170 IF S$ = "LEAVE" OR S$ = "LEAVE ROOM" OR S$ = "EXIT" OR S$ = "ESCAPE" THEN PRINT "If only it were that easy!" : GOTO 5000
 5180 IF S$ = "LOOK BED" THEN PRINT "It's a kid size bed and its colors are outdated." : GOTO 5000
+5990 IF S$ = "RESTART" THEN GOTO 1
 6000 PRINT "This is not helping!! I don't know how to "; S$ : GOTO 5000
 
 10000 FOR J=1 TO 1000 : NEXT J : FOR I=1 TO 32 : FOR J=0 TO 150: NEXT J: PRINT "" : NEXT I
