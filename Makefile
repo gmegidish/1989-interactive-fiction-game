@@ -9,8 +9,8 @@ AppleCommander-ac-1.6.0.jar:
 	
 	cp -f MASTER.DSK $@
 	java -jar AppleCommander-ac-1.6.0.jar -d 1989.dsk HELLO
-	java -jar AppleCommander-ac-1.6.0.jar -bas 1989.dsk HELLO < hello.bas
-	java -jar AppleCommander-ac-1.6.0.jar -bas 1989.dsk 1989.BAS < adayin1989.bas
+	java -jar AppleCommander-ac-1.6.0.jar -bas 1989.dsk HELLO < adayin1989.bas
+	java -jar AppleCommander-ac-1.6.0.jar -g 1989.dsk HELLO | wc -c
 
 clean:
 	rm -f AppleCommander-ac-1.6.0.jar
